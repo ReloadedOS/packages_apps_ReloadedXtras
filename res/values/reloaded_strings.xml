@@ -38,4 +38,12 @@
     <string name="quick_pulldown_right">Pull down status bar from right side</string>
     <string name="quick_pulldown_left">Pull down status bar from left side</string>
 
+    <!-- Brightness slider -->
+    <string name="brightness_slider">Brightness slider</string>
+    <string name="qqs_show_brightness_title">Show brightness slider in QQS</string>
+    <string name="brightness_slider_position_title">Brightness slider position</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="show_auto_brightness_button_title">Show auto brightness button</string>
+
 </resources>
