@@ -18,6 +18,11 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <org.reloadedos.framework.preference.SystemSettingSwitchPreference
+        android:key="show_fourg_icon"
+        android:title="@string/show_fourg_icon_title"
+        android:defaultValue="true" />
+
     <Preference
          android:key="icon_manager"
          android:title="@string/icon_manager_title"
