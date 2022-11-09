@@ -46,4 +46,8 @@
     <string name="bottom">Bottom</string>
     <string name="show_auto_brightness_button_title">Show auto brightness button</string>
 
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">Show data usage</string>
+    <string name="qs_show_data_usage_summary">Show daily cellular/Wi-Fi data usage in QS footer</string>
+
 </resources>
