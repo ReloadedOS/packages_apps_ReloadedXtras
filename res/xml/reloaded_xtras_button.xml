@@ -18,4 +18,10 @@
         android:title="@string/button_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <org.reloadedos.framework.preference.SystemSettingSwitchPreference
+        android:key="torch_power_button_gesture"
+        android:title="@string/torch_power_button_gesture_title"
+        android:summary="@string/torch_power_button_gesture_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

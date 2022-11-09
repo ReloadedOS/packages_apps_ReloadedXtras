@@ -97,4 +97,8 @@
     <string name="network_traffic_units_bits" translatable="false">kb/s, Mb/s, Gb/s (bits)</string>
     <string name="network_traffic_units_bytes" translatable="false">kB/s, MB/s, GB/s (bytes)</string>
 
+    <!-- Torch Power button gesture -->
+    <string name="torch_power_button_gesture_title">Quick torch</string>
+    <string name="torch_power_button_gesture_summary">When the screen is off, long-pressing power button will enable torch</string>
+
 </resources>
