@@ -113,4 +113,8 @@
     <string name="power_menu_hide_on_secure_title">Hide on lock screen</string>
     <string name="power_menu_hide_on_secure_summary">Hide the power menu while on a secure lock screen</string>
 
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_summary">Remove screenshot and screenrecord limits for all apps. This can be convenient in some cases but may lead to privacy leaks.</string>
+
 </resources>
