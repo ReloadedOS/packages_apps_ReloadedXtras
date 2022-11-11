@@ -16,44 +16,31 @@
 
 package org.reloadedos.xtras.fragments;
 
-import java.util.ArrayList;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.UserHandle;
-import androidx.preference.ListPreference;
-import androidx.preference.SwitchPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import android.provider.Settings;
-
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.R;
 
-public class NavbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+import com.android.settings.R;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
+
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class NavbarSettings extends DashboardFragment {
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.reloaded_xtras_navigation);
-
+    protected int getPreferenceScreenResId() {
+        return R.xml.reloaded_xtras_navigation;
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-
-        return false;
+    protected String getLogTag() {
+        return "NavbarSettings";
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.RELOADED;
     }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.reloaded_xtras_navigation);
 }

@@ -18,47 +18,22 @@ package org.reloadedos.xtras.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import android.os.Bundle;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.os.UserHandle;
-import android.content.ContentResolver;
-import android.content.res.Resources;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
-import android.provider.Settings;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import java.util.Locale;
-import android.text.TextUtils;
-import android.view.View;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
-import java.util.List;
-import java.util.ArrayList;
-
-public class QuickSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
-
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class QuickSettings extends DashboardFragment {
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-
-        addPreferencesFromResource(R.xml.reloaded_xtras_quicksettings);
-
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        }
+    protected int getPreferenceScreenResId() {
+        return R.xml.reloaded_xtras_quicksettings;
+    }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-
-        return false;
+    protected String getLogTag() {
+        return "QuickSettings";
     }
 
     @Override
@@ -66,4 +41,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.RELOADED;
     }
 
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.reloaded_xtras_quicksettings);
 }
