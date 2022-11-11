@@ -1,58 +1,39 @@
 /*
- *  Copyright (C) 2016 The Dirty Unicorns Project
+ * Copyright (C) 2022 ReloadedOS
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.reloadedos.xtras.fragments;
 
-import android.content.ContentResolver;
-import android.content.res.Resources;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.UserHandle;
-import android.os.Vibrator;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
-import android.provider.Settings;
-
-import com.android.settings.R;
-
-import com.android.settings.SettingsPreferenceFragment;
-
 import com.android.internal.logging.nano.MetricsProto;
 
-public class ButtonSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener{
+import com.android.settings.R;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
+
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class ButtonSettings extends DashboardFragment {
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.reloaded_xtras_button);
-
-        final PreferenceScreen prefScreen = getPreferenceScreen();
+    protected int getPreferenceScreenResId() {
+        return R.xml.reloaded_xtras_button;
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        return false;
+    @Override
+    protected String getLogTag() {
+        return "ButtonSettings";
     }
 
     @Override
@@ -60,4 +41,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.RELOADED;
     }
 
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.reloaded_xtras_button);
 }
