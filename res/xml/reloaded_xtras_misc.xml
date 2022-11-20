@@ -24,4 +24,10 @@
         android:summary="@string/ignore_window_secure_summary"
         android:defaultValue="false"/>
 
+    <org.reloadedos.framework.preference.SecureSettingSwitchPreference
+        android:key="games_device_spoof"
+        android:title="@string/games_device_spoof_title"
+        android:summary="@string/games_device_spoof_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>
