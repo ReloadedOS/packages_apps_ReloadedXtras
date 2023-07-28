@@ -15,19 +15,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Quick QS pulldown -->
-    <string-array name="quick_pulldown_entries">
-        <item>@string/quick_pulldown_none</item>
-        <item>@string/quick_pulldown_right</item>
-        <item>@string/quick_pulldown_left</item>
-    </string-array>
-
-    <string-array name="quick_pulldown_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <!-- Brightness slider -->
     <string-array name="brightness_slider_position_entries" translatable="false">
         <item>@string/top</item>

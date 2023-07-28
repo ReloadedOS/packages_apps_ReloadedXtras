@@ -32,12 +32,6 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
 
-    <!-- Quick QS pulldown -->
-    <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
-    <string name="quick_pulldown_none">Disabled</string>
-    <string name="quick_pulldown_right">Pull down status bar from right side</string>
-    <string name="quick_pulldown_left">Pull down status bar from left side</string>
-
     <!-- Brightness slider -->
     <string name="brightness_slider">Brightness slider</string>
     <string name="qqs_show_brightness_title">Show brightness slider in QQS</string>
