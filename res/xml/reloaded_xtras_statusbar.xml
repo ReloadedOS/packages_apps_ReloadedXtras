@@ -53,6 +53,14 @@
         android:entryValues="@array/status_bar_am_pm_values"
         android:defaultValue="2" />
 
+    <!-- Network Traffic -->
+    <org.reloadedos.framework.preference.SystemSettingMasterSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:summary="@string/network_traffic_state_summary"
+        android:fragment="org.reloadedos.xtras.fragments.NetworkTraffic"
+        android:defaultValue="false" />
+
     <Preference
          android:key="icon_manager"
          android:title="@string/icon_manager_title"
